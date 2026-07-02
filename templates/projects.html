@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/navbar.css">
+    <link rel="stylesheet" href="static/footer.css">
+    <link rel="stylesheet" href="static/project1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+    
+</head>
+<body>
+
+  {% include "navbar.html" %}
+
+<div class="container">
+  <a href="heart_attack">
+    <div class="card">
+      <img src="{{ url_for('static', filename='image.svg') }}">
+      <div class="card-content">
+        <div class="card-title">Heart Attack Predictor</div>
+          <a class="about_project" href="about_heart_attack"><i class="fa-solid fa-circle-info"></i></a>
+      </div>
+    </div>
+  </a>
+
+
+  <a href="diabetes"><div class="card">
+    <img src="{{ url_for('static', filename='image.svg') }}">
+    <div class="card-content">
+      <div class="card-title">Diabetes Predictor</div>
+      <a class="about_project" href="about_diabetes"><i class="fa-solid fa-circle-info"></i></a>
+    </div>
+  </div></a>
+
+  <a href="water"><div class="card">
+    <img src="{{ url_for('static', filename='image.svg') }}">
+    <div class="card-content">
+      <div class="card-title">Water Quality Predictor</div>
+      <a class="about_project" href="about_water"><i class="fa-solid fa-circle-info"></i></a>
+    </div>
+  </div></a>
+  
+  <a href="diamond"><div class="card">
+    <img src="{{ url_for('static', filename='image.svg') }}">
+    <div class="card-content">
+      <div class="card-title">Diamond Price Predictor</div>
+      <a class="about_project" href="about_diamond"><i class="fa-solid fa-circle-info"></i></a>
+    </div>
+  </div></a>
+  
+  <a href="no_project"><div class="card">
+    <img src="{{ url_for('static', filename='image.svg') }}">
+    <div class="card-content">
+      <div class="card-title">Car Price Predictor</div>
+      <a class="about_project" href=""><i class="fa-solid fa-circle-info"></i></a>
+    </div>
+  </div></a>
+
+  <a href="no_project"><div class="card">
+    <img src="{{ url_for('static', filename='image.svg') }}">
+    <div class="card-content">
+      <div class="card-title">Laptop Price Predictor</div>
+      <a class="about_project" href=""><i class="fa-solid fa-circle-info"></i></a>
+    </div>
+  </div></a>
+  </a>
+
+
+  <a href="no_project"><div class="card">
+    <img src="{{ url_for('static', filename='image.svg') }}">
+    <div class="card-content">
+      <div class="card-title">Water Quality Predictor</div>
+      <a class="about_project" href=""><i class="fa-solid fa-circle-info"></i></a>
+    </div>
+  </div></a>
+
+  <a href="no_project"><div class="card">
+    <img src="{{ url_for('static', filename='image.svg') }}">
+    <div class="card-content">
+      <div class="card-title">House Price Predictor</div>
+      <a class="about_project" href=""><i class="fa-solid fa-circle-info"></i></a>
+    </div>
+  </div></a>
+
+  <a href="no_project"><div class="card">
+    <img src="{{ url_for('static', filename='image.svg') }}">
+    <div class="card-content">
+      <div class="card-title">Heart Attack Predictor</div>
+      <a class="about_project" href=""><i class="fa-solid fa-circle-info"></i></a>
+    </div>
+  </div></a>
+  </div>
+
+</body>
+</html>
+
+     <!-- Footer -->
+  {% include "footer.html" %}
+</body>
+<script src="/static/function.js"></script>
+
+
+
+</script>
+</html>

@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Water Quality Variables Explained</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/navbar.css">
+    <link rel="stylesheet" href="static/footer.css">
+    <link rel="stylesheet" href="static/about_project.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+{% include "navbar.html" %}
+
+
+
+
+<div class="about-section">
+    <h2>Water Quality Variables Explained</h2>
+
+    <h3>Salinity (ppt) – Parts per Thousand</h3>
+    <p><strong>What it is:</strong> The concentration of dissolved salts in water.</p>
+    <p><strong>Why it matters:</strong> High salinity can affect the health of aquatic organisms. Freshwater ecosystems usually require very low salinity, while estuarine or marine environments tolerate more.</p>
+    <b>Indicator of: Pollution, tidal influence, or evaporation levels.</b>
+
+    <h3>Dissolved Oxygen (mg/L)</h3>
+    <p><strong>What it is:</strong> Amount of oxygen dissolved in water, necessary for aquatic life.</p>
+    <p><strong>Why it matters:</strong> Low DO can lead to "dead zones" where life can't survive. High DO usually indicates good water quality.</p>
+    <b>Indicator of: Biological health, organic pollution, or temperature effects.</b>
+
+    <h3>pH (standard units)</h3>
+    <p><strong>What it is:</strong> A measure of how acidic or basic the water is (scale 0–14).</p>
+    <p><strong>Why it matters:</strong> Most aquatic life thrives in a pH range of 6.5–8.5. Too high or low can harm organisms or indicate chemical contamination.</p>
+    <b>Indicator of: Acid rain, industrial discharge, or natural buffering.</b>
+
+    <h3>Secchi Depth (m)</h3>
+    <p><strong>What it is:</strong> A measure of water clarity using a Secchi disk.</p>
+    <p><strong>Why it matters:</strong> Lower values suggest turbidity or algal blooms, reducing light penetration and photosynthesis.</p>
+    <b>Indicator of: Sediment levels, plankton density, or pollution.</b>
+
+    <h3>Water Depth (m)</h3>
+    <p><strong>What it is:</strong> The depth at the sampling site.</p>
+    <p><strong>Why it matters:</strong> Affects temperature stratification, oxygen levels, and sampling consistency.</p>
+    <b>Indicator of: Context for interpreting other parameters like temperature and oxygen.</b>
+
+    <h3>Water Temperature (°C)</h3>
+    <p><strong>What it is:</strong> Temperature of the water at the time of sampling.</p>
+    <p><strong>Why it matters:</strong> Influences dissolved oxygen, metabolism of organisms, and chemical reactions.</p>
+    <b>Indicator of: Seasonal variation, thermal pollution, or mixing.</b>
+
+    <h3>Time (24:00)</h3>
+    <p><strong>What it is:</strong> The time of sampling (in 24-hour format).</p>
+    <p><strong>Why it matters:</strong> Diurnal cycles can affect DO, temperature, and photosynthesis.</p>
+    <b>Indicator of: Temporal variation in water properties.</b>
+
+    <h3>Air Temperature (°C)</h3>
+    <p><strong>What it is:</strong> Ambient air temperature at the time of sampling.</p>
+    <p><strong>Why it matters:</strong> Affects water temperature and evaporation.</p>
+    <b>Indicator of: Weather conditions or seasonal effects.</b>
+
+    <h3>Year</h3>
+    <p><strong>What it is:</strong> The year when the sample was taken.</p>
+    <p><strong>Why it matters:</strong> Tracks long-term trends and changes in water quality over time.</p>
+    <b>Indicator of: Climate change, policy impacts, or long-term pollution.</b>
+
+    <img src="{{ url_for('static', filename='Water_Quality_Feature_Importance.png') }}">
+</div>
+{% include "footer.html" %}
+</body>
+<div class="main_time">
+<div class="time t1"><p>TEXT is text and nothing else</p></div>
+<div class="time t2"><p>TEXT is text and nothing else</p></div>
+<div class="time t3"><p>TEXT is text and nothing else</p></div>
+<div class="time t4"><p>TEXT is text and nothing else</p></div>
+<div class="time t5"><p>TEXT is text and nothing else</p></div>
+<div class="time t6"><p>TEXT is text and nothing else</p></div>
+<div class="time t7"><p>TEXT is text and nothing else</p></div>
+<div class="time t8"><p>TEXT is text and nothing else</p></div>
+<div class="time t9"><p>TEXT is text and nothing else</p></div>
+<div class="time t10"><p>TEXT is text and nothing else</p></div>
+<div class="time t11"><p>TEXT is text and nothing else</p></div>
+<div class="time t12"><p>TEXT is text and nothing else</p></div>
+<div class="time t13"><p>TEXT is text and nothing else</p></div>
+<div class="time t14"><p>TEXT is text and nothing else</p></div>
+<div class="time t15"><p>TEXT is text and nothing else</p></div>
+<div class="time t16"><p>TEXT is text and nothing else</p></div>
+<div class="time t17"><p>TEXT is text and nothing else</p></div>
+<div class="time t18"><p>TEXT is text and nothing else</p></div>
+<div class="time t19"><p>TEXT is text and nothing else</p></div>
+<div class="time t20"><p>TEXT is text and nothing else</p></div>
+
+</div>
+<style>
+    .main_time{
+        margin-top: 200px;
+        margin-left: 70px;
+        display: flex;
+        overflow-x: scroll;
+        width: 90%;
+        height: auto;
+        border: 5px solid #725b5bb2;
+        border-radius: 20px;
+        padding: 10px;
+    }
+    .time{
+        font-weight: 800;
+        margin:10px;
+        width: 200px;
+        height:200px;
+        /* border-radius: 5% ; */
+    }
+    /* .t7{
+        background-color: #ffdfde ;
+        color: #6a7ba2;
+    }
+    .t8{
+        background-color: #d6ed17;
+        color: #606060;
+    }
+    .t9{
+        background-color: #2c5f2d ;
+        color: #97bc62;
+    }
+    .t10{
+        background-color: #0063b2 ;
+        color: #9cc3d5;
+    }
+    .t11{
+        background-color: #101820 ;
+        color: #fee715;
+    }
+    .t12{
+        background-color: #d3687f ;
+        color: #ced46a;
+    }
+    .t13{
+        background-color: #d3687f ;
+        color: #c7d3d4;
+    } */
+    .t1{
+        background-color: #0a174e ;
+        color: #f5d042;
+    }
+    .t2{
+        background-color: #07553b ;
+        color: #ced46a;
+    }
+    .t3{
+        background-color: #50586c ;
+        color: #dce2f0;
+    }
+    .t4{
+        background-color: #815854 ;  /* SELECT */
+        color: #f9ebde;
+    }
+    .t5{
+        background-color: #1e4174 ; /* SELECT */
+        color: #dda94b;
+    }
+    .t6{
+        background-color: #a4193d ; /* #a41*/ /* SELECT */
+        color: #ffdfb9;
+    }
+    
+    .t14{
+        background-color: #2bae66 ; /* SELECT */
+        color: #fcf6f5;
+    }
+    .t15{
+        background-color: #2d2926 ; /* SELECT */
+        color: #ed6f63;
+    }
+    .t16{
+        background-color: #990011 ; /* SELECT */
+        color: #fcf6f5;
+    }
+    .t17{
+        background-color: #f95700 ; /* SELECT */
+        color: #ffffff;
+    }
+    .t18{
+        
+    }
+    .t19{
+        
+    }
+    .t20{
+        
+    }
+</style>
+</html>

@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About - Diamond Price Predictor</title>
+  <link rel="stylesheet" href="static/style.css">
+  <link rel="stylesheet" href="static/navbar.css">
+  <link rel="stylesheet" href="static/footer.css">
+  <link rel="stylesheet" href="static/about_project.css">
+  <!-- Font Awesome CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+{% include "navbar.html" %}
+
+
+
+
+<div class="about-section">
+  <h2>About Diamond Price Predictor </h2>
+
+  <p>
+    This project is based on a diamond dataset, where each record represents a diamond with attributes such as weight (carat), cut, color, clarity, and other physical characteristics. To prepare the data for analysis and machine learning, categorical features were encoded numerically.
+  </p>
+
+  <div class="encoding-table">
+    <h4>Encoding Schemes</h4>
+    <ul>
+      <li><strong>Cut:</strong> {'Fair': 0, 'Good': 1, 'Very Good': 2, 'Premium': 3, 'Ideal': 4}</li>
+      <li><strong>Clarity:</strong> {'I1': 0, 'SI2': 1, 'SI1': 2, 'VS2': 3, 'VS1': 4, 'VVS2': 5, 'VVS1': 6, 'IF': 7}</li>
+      <li><strong>Color:</strong> {'D': 0, 'E': 1, 'F': 2, 'G': 3, 'H': 4, 'I': 5, 'J': 6}</li>
+    </ul>
+  </div>
+
+  <p>
+    The <strong>carat</strong> column represents the weight of a diamond in metric carats. A carat is a standard unit of mass equal to <strong>0.2 grams</strong>. Therefore:
+    <br><br>
+    <code>carat = 0.23</code> means <strong>0.23 carats</strong> (not 23 carats), which equals <strong>0.046 grams</strong>.
+  </p>
+
+  <div class="clarity-table">
+    <h4>Clarity Grades Explained</h4>
+    <p>
+      The <strong>clarity</strong> of a diamond refers to the visibility of internal flaws (inclusions) or surface imperfections (blemishes). Below is a detailed breakdown:
+    </p>
+    <table>
+      <tr>
+        <th>Grade</th>
+        <th>Stands For</th>
+        <th>Flaw Visibility</th>
+        <th>Value Level</th>
+        <th>Encoding Scheme</th>
+      </tr>
+      <tr>
+        <td>I1</td>
+        <td>Included 1</td>
+        <td>Visible to eye</td>
+        <td>Low</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>SI2</td>
+        <td>Slightly Included 2</td>
+        <td>Possibly visible</td>
+        <td>Low-Mid</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>SI1</td>
+        <td>Slightly Included 1</td>
+        <td>Hard to see</td>
+        <td>Mid</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>VS2</td>
+        <td>Very Slightly Included 2</td>
+        <td>Difficult at 10× magnification</td>
+        <td>Mid-High</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>VS1</td>
+        <td>Very Slightly Included 1</td>
+        <td>Very difficult at 10×</td>
+        <td>High</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>VVS2</td>
+        <td>Very Very Slightly Included 2</td>
+        <td>Extremely hard at 10×</td>
+        <td>Very High</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>VVS1</td>
+        <td>Very Very Slightly Included 1</td>
+        <td>Almost invisible</td>
+        <td>Very High</td>
+        <td>6</td>
+      </tr>
+      <tr>
+        <td>IF</td>
+        <td>Internally Flawless</td>
+        <td>No internal flaws</td>
+        <td>Premium</td>
+        <td>7</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="color-table">
+    <h4>Color Grades Explained</h4>
+    <p>
+      The <strong>color</strong> of a diamond refers to the presence of any color in the diamond, with the most valuable diamonds being those with the least amount of color. The grading scale starts from "D" (colorless) to "J" (light yellow or brown). Below is a breakdown:
+    </p>
+    <table>
+      <tr>
+        <th>Grade</th>
+        <th>Color Description</th>
+        <th>Value Level</th>
+        <th>Encoding Scheme</th>
+      </tr>
+      <tr>
+        <td>D</td>
+        <td>Colorless</td>
+        <td>Premium</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>E</td>
+        <td>Colorless</td>
+        <td>Very High</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>F</td>
+        <td>Colorless</td>
+        <td>High</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>G</td>
+        <td>Near Colorless</td>
+        <td>Mid-High</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>H</td>
+        <td>Near Colorless</td>
+        <td>Mid</td>
+        <td>4</td>
+      </tr>
+      <tr>
+        <td>I</td>
+        <td>Near Colorless</td>
+        <td>Low-Mid</td>
+        <td>5</td>
+      </tr>
+      <tr>
+        <td>J</td>
+        <td>Light Yellow/Brown</td>
+        <td>Low</td>
+        <td>6</td>
+      </tr>
+    </table>
+  </div>
+
+  <div class="cut-table">
+    <h4>Cut Grades Explained</h4>
+    <p>
+      The <strong>cut</strong> of a diamond refers to how well the diamond's facets are shaped and aligned to reflect light. A well-cut diamond will sparkle more and have better overall appearance and value. Below is a breakdown of the cut grades:
+    </p>
+    <table>
+      <tr>
+        <th>Grade</th>
+        <th>Cut Description</th>
+        <th>Value Level</th>
+        <th>Encoding Scheme</th>
+      </tr>
+      <tr>
+        <td>Fair</td>
+        <td>Poorly cut diamond, minimal sparkle</td>
+        <td>Low</td>
+        <td>0</td>
+      </tr>
+      <tr>
+        <td>Good</td>
+        <td>Acceptable cut with moderate sparkle</td>
+        <td>Low-Mid</td>
+        <td>1</td>
+      </tr>
+      <tr>
+        <td>Very Good</td>
+        <td>Well cut diamond with noticeable sparkle</td>
+        <td>Mid</td>
+        <td>2</td>
+      </tr>
+      <tr>
+        <td>Premium</td>
+        <td>Excellent cut with strong sparkle</td>
+        <td>Mid-High</td>
+        <td>3</td>
+      </tr>
+      <tr>
+        <td>Ideal</td>
+        <td>Perfectly cut diamond, maximized sparkle</td>
+        <td>High</td>
+        <td>4</td>
+      </tr>
+    </table>
+  </div>
+
+  <p>
+    These preprocessing and explanation steps help standardize the dataset for analysis and model development while preserving the meaningful ranking of each feature.
+  </p>
+
+<div class="model-container">
+        <div class="model-title">RandomForestRegressor:</div>
+        <div class="metric"><span>MAE Val:</span> 298.8862 | <span>MAE Test:</span> 279.0402</div>
+        <div class="metric"><span>MSE Val:</span> 343119.3166 | <span>MSE Test:</span> 280696.8930</div>
+        <div class="metric"><span>R² Val:</span> 0.9788 | <span>R² Test:</span> 0.9820</div>
+    </div>
+
+    <div class="model-container">
+        <div class="model-title">GradientBoostingRegressor:</div>
+        <div class="metric"><span>MAE Val:</span> 380.5012 | <span>MAE Test:</span> 361.5869</div>
+        <div class="metric"><span>MSE Val:</span> 482151.3069 | <span>MSE Test:</span> 420647.4368</div>
+        <div class="metric"><span>R² Val:</span> 0.9702 | <span>R² Test:</span> 0.9730</div>
+    </div>
+
+    <div class="model-container">
+        <div class="model-title">XGBoost:</div>
+        <div class="metric"><span>MAE Val:</span> 288.5395 | <span>MAE Test:</span> 269.2923</div>
+        <div class="metric"><span>MSE Val:</span> 316029.6617 | <span>MSE Test:</span> 265846.3076</div>
+        <div class="metric"><span>R² Val:</span> 0.9805 | <span>R² Test:</span> 0.9829</div>
+    </div>
+
+    <div class="model-container selected_model">
+        <div class="model-title" >LightGBM: (selected model)</div>
+        <div class="metric"><span>MAE Val:</span> 283.0382 | <span>MAE Test:</span> 269.8059</div>
+        <div class="metric"><span>MSE Val:</span> 293731.4302 | <span>MSE Test:</span> 261473.2584</div>
+        <div class="metric"><span>R² Val:</span> 0.9819 | <span>R² Test:</span> 0.9832</div>
+    </div>
+
+    <div class="model-container">
+        <div class="model-title">CatBoost:</div>
+        <div class="metric"><span>MAE Val:</span> 290.6504 | <span>MAE Test:</span> 280.4970</div>
+        <div class="metric"><span>MSE Val:</span> 305665.5991 | <span>MSE Test:</span> 278945.8012</div>
+        <div class="metric"><span>R² Val:</span> 0.9811 | <span>R² Test:</span> 0.9821</div>
+    </div>
+
+</div>
+{% include "footer.html" %}
+</body>
+</html>

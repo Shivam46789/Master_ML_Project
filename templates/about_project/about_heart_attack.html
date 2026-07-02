@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/navbar.css">
+    <link rel="stylesheet" href="static/footer.css">
+    <link rel="stylesheet" href="static/about_project.css">
+    <title>Model Performance Metrics</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+        }
+        .model-container {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background-color: #f8f8f8;
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        .model-title {
+            font-size: 1.3em;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #34495e;
+        }
+        .metric {
+            margin-left: 20px;
+        }
+        .metric span {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+{% include "navbar.html" %}
+
+
+<div class="about-section">
+  <h2>About Heart Attack Predictor </h2>
+
+    <h1>Model Performance Metrics</h1>
+
+    <div class="model-container">
+        <div class="model-title">RandomForestRegressor:</div>
+        <div class="metric"><span>MAE Val:</span> 0.00935 | <span>MAE Test:</span> 0.00935</div>
+        <div class="metric"><span>MSE Val:</span> 0.00935 | <span>MSE Test:</span> 0.00935</div>
+        <div class="metric"><span>R² Val:</span> 0.9626 | <span>R² Test:</span> 0.9625</div>
+        <div class="metric"><span>Accuracy Val:</span> 0.9907 | <span>Accuracy Test:</span> 0.9907</div>
+    </div>
+
+    <div class="model-container">
+        <div class="model-title">GradientBoostingRegressor:</div>
+        <div class="metric"><span>MAE Val:</span> 0.00935 | <span>MAE Test:</span> 0.01869</div>
+        <div class="metric"><span>MSE Val:</span> 0.00935 | <span>MSE Test:</span> 0.01869</div>
+        <div class="metric"><span>R² Val:</span> 0.9626 | <span>R² Test:</span> 0.9249</div>
+        <div class="metric"><span>Accuracy Val:</span> 0.9907 | <span>Accuracy Test:</span> 0.9813</div>
+    </div>
+
+    <div class="model-container">
+        <div class="model-title">XGBoost:</div>
+        <div class="metric"><span>MAE Val:</span> 0.00935 | <span>MAE Test:</span> 0.00935</div>
+        <div class="metric"><span>MSE Val:</span> 0.00935 | <span>MSE Test:</span> 0.00935</div>
+        <div class="metric"><span>R² Val:</span> 0.9626 | <span>R² Test:</span> 0.9625</div>
+        <div class="metric"><span>Accuracy Val:</span> 0.9907 | <span>Accuracy Test:</span> 0.9907</div>
+    </div>
+
+    <div class="model-container">
+        <div class="model-title">LightGBM:</div>
+        <div class="metric"><span>MAE Val:</span> 0.01246 | <span>MAE Test:</span> 0.01246</div>
+        <div class="metric"><span>MSE Val:</span> 0.01246 | <span>MSE Test:</span> 0.01246</div>
+        <div class="metric"><span>R² Val:</span> 0.9501 | <span>R² Test:</span> 0.9499</div>
+        <div class="metric"><span>Accuracy Val:</span> 0.9875 | <span>Accuracy Test:</span> 0.9875</div>
+    </div>
+
+    <div class="model-container">
+        <div class="model-title">CatBoost:</div>
+        <div class="metric"><span>MAE Val:</span> 0.01558 | <span>MAE Test:</span> 0.01558</div>
+        <div class="metric"><span>MSE Val:</span> 0.01558 | <span>MSE Test:</span> 0.01558</div>
+        <div class="metric"><span>R² Val:</span> 0.9376 | <span>R² Test:</span> 0.9374</div>
+        <div class="metric"><span>Accuracy Val:</span> 0.9844 | <span>Accuracy Test:</span> 0.9844</div>
+    </div>
+</div>
+
+{% include "footer.html" %}
+</body>
+</html>

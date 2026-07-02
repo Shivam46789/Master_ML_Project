@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Shivam C Vishwakarma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/navbar.css">
+    <link rel="stylesheet" href="static/footer.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+{% include "navbar.html" %}
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <span class="logo-short">S</span>
+            <span class="logo-text">Shivam C</span>
+            <span class="logo-text">Vishwakarma</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="nav-list"><a href="home"><i class="fa fa-home"></i><span class="label">Home</span></a></li>
+                <li class="nav-list"><a href="about"><i class="fa fa-user"></i><span class="label">About</span></a></li>
+                <li class="nav-list"><a href="projects"><i class="fa fa-cogs"></i><span class="label">Project</span></a></li>
+                <li class="nav-list"><a href="contact"><i class="fa fa-envelope"></i><span class="label">Contact</span></a></li>
+                <li class="nav-list"><a href="/"><i class="fa fa-envelope"></i><span class="label">Index</span></a></li>   
+                
+                <li class="submenu">
+                    <ul class="submenu-items">
+                        <div id="theme-option">
+                        <li><button class="theme-btn" id="default" onclick="changeTheme('theme-default')"></button></li>
+                        <li><button class="theme-btn" id="blue" onclick="changeTheme('theme-blue')"></button></li>
+                        <li><button class="theme-btn" id="purple" onclick="changeTheme('theme-purple')"></button></li>
+                        <li><button class="theme-btn" id="orange" onclick="changeTheme('theme-orange')"></button></li>
+                        <li><button class="theme-btn" id="dark" onclick="changeTheme('theme-dark')"></button></li>
+                        </div>
+                    </ul>    
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <!-- Content -->
+   <div class="content">
+    <form action="/predict" method="post" class="form-container">
+        <h2>Heart Attack Prediction</h2>
+        
+        <div class="form-group">
+            <!-- <label for="age">Age</label> -->
+            <input type="number" placeholder="Age" name="age" required>
+        </div>
+
+        <div class="form-group"> 
+            <!-- <label for="gender">Gender</label> -->
+            <select placeholder="Gender" name="gender" class="styled-select" required>
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+            </select>
+        </div>
+
+
+        <div class="form-group">
+            <!-- <label for="heart_rate">Heart Rate</label> -->
+            <input type="number" placeholder="Heart Rate" name="heart_rate" required>
+        </div>
+
+        <div class="form-group">
+            <!-- <label for="systolic_bp">Systolic BP</label> -->
+            <input type="number" placeholder="Systolic BP" name="systolic_bp" required>
+        </div>
+
+        <div class="form-group">
+            <!-- <label for="diastolic_bp">Diastolic BP</label> -->
+            <input type="number" placeholder="Diastolic BP" name="diastolic_bp" required>
+        </div>
+
+        <div class="form-group">
+            <!-- <label for="blood_sugar">Blood Sugar</label> -->
+            <input type="number" placeholder="Blood Sugar" step="any" name="blood_sugar" required>
+        </div>
+
+        <div class="form-group">
+            <!-- <label for="ckmb">CK-MB</label> -->
+            <input type="number" placeholder="CK-MB" step="any" name="ckmb" required>
+        </div>
+
+        <div class="form-group">
+            <!-- <label for="troponin">Troponin</label> -->
+            <input type="number" placeholder="Troponin" step="any" name="troponin" required>
+        </div>
+
+        <button type="submit">Predict</button>
+        
+    </form>
+
+    <div class="prediction">
+        {% if prediction_text %}
+            <h5 class="{{ prediction_class }}">{{ prediction_text }}</h5>
+        {% endif %}
+    </div>
+</div>
+
+
+
+
+
+
+    <!-- Footer -->
+  {% include "footer.html" %}
+
+</body>
+<!-- <script>
+    function changeTheme(themeName) {
+        document.body.className = themeName;
+    }
+</script> -->
+
+<script src="/static/function.js"></script>
+
+</html>

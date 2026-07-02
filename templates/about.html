@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/navbar.css">
+    <link rel="stylesheet" href="static/footer.css">
+    <link rel="stylesheet" href="static/about.css">
+    <link rel="stylesheet" href="static/contact.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+    
+</head>
+<body>
+{% include "navbar.html" %}
+
+    <section id="about">
+        <div class="container">
+            <div class="about-me">
+                <h1>About Me</h1>
+                <p>I am an engineering student specializing in <strong>Artificial Intelligence and Machine Learning (AIML)</strong> at <strong>Mumbai University</strong>, graduating in <strong>2026</strong>.</p>
+                <p>I have a keen interest in <strong>data analysis</strong> and have completed several projects focused on <strong>data visualization</strong> and <strong>machine learning</strong>.</p>
+                <p><strong>Tools I use:</strong> <b>MySQL, Excel, Jupyter Notebook, Anaconda, Visual Studio Code.</b></p>
+                <p><strong>Python Libraries:</strong> <b>NumPy, Pandas, Matplotlib, Seaborn, Scikit-learn.</b></p>
+                <p>I'm passionate about uncovering insights from data and applying machine learning techniques to solve real-world problems.</p>
+                <p>Learning Fine-tunning of SLMs/LLMs</p>
+            </div>
+    
+            <div class="social-icons">
+                <!-- Call -->
+                <a href="tel:+91 8433511930" aria-label="Call me">
+                    <i class="fas fa-phone"></i>
+                </a>
+                
+                <!-- Email -->
+                <a href="mailto:shivamcvishwakarma@gmail.com" aria-label="Email us">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                
+                <!-- LinkedIn -->
+                <a href="https://www.linkedin.com/in/shivamcvishwakarma" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+
+{% include "footer.html" %}
+</body>
+<script src="/static/function.js"></script>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Attack Predictor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/navbar.css">
+    <link rel="stylesheet" href="static/footer.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Sidebar -->
+{% include "navbar.html" %}
+<!-- Content -->
+<div class="content">
+    <form action="/predict_diabetes" method="post" class="form-container">
+        <h2>Diabetes Prediction</h2>
+
+        <div class="form-group">
+            <input type="number" placeholder="Pregnancies" name="pregnancies" required>
+        </div>
+
+        <div class="form-group">
+            <input type="number" placeholder="Glucose" name="glucose" required>
+        </div>
+
+        <div class="form-group">
+            <input type="number" placeholder="Blood Pressure" name="blood_pressure" required>
+        </div>
+
+        <div class="form-group">
+            <input type="number" placeholder="Skin Thickness" name="skin_thickness" required>
+        </div>
+
+        <div class="form-group">
+            <input type="number" placeholder="Insulin" name="insulin" required>
+        </div>
+
+        <div class="form-group">
+            <input type="number" step="any" placeholder="BMI" name="bmi" required>
+        </div>
+
+        <div class="form-group">
+            <input type="number" step="any" placeholder="Diabetes Pedigree Function" name="diabetes_pedigree_function" required>
+        </div>
+
+        <div class="form-group">
+            <input type="number" placeholder="Age" name="age" required>
+        </div>
+
+        <button type="submit">Predict</button>
+        <a class="about_project" href="about_diabetes"><button class="project_about" type="button"> <i class="fa-solid fa-circle-info"></i> About Project</button></a>
+        
+    </form>
+
+    {% if prediction_text %}
+        <div class="prediction">
+            <h5 class="{{ prediction_class }}">{{ prediction_text }}</h5>
+        </div>
+    {% endif %}
+</div>
+
+
+    <!-- Footer -->
+{% include "footer.html" %}
+</body>
+<!-- <script>
+    function changeTheme(themeName) {
+        document.body.className = themeName;
+    }
+</script> -->
+
+<script src="/static/function.js"></script>
+
+</html>

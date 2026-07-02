@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <!-- <title>Heart Attack Predictor</title> -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/navbar.css">
+    <link rel="stylesheet" href="static/footer.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+    <style>
+/* HAMBURGER */
+.hamburger-lines {
+    display: none;
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1100;
+    background: #85e4d9;
+    padding: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.hamburger-lines .line {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 5px 0;
+    transition: all 0.3s ease;
+}
+
+/* OVERLAY */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.35);
+    backdrop-filter: blur(3px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+    z-index: 1000;
+}
+
+#nav-toggle:checked ~ .overlay {
+    opacity: 1;
+    visibility: visible;
+}
+
+/* HAMBURGER ANIMATION */
+#nav-toggle:checked + .hamburger-lines .line1 {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+#nav-toggle:checked + .hamburger-lines .line2 {
+    opacity: 0;
+}
+
+#nav-toggle:checked + .hamburger-lines .line3 {
+    transform: rotate(-45deg) translate(6px, -6px);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+
+    .hamburger-lines {
+        display: block;
+    }
+
+    .sidebar {
+        width: 260px;
+        left: -260px;
+        transition: left 0.35s ease;
+    }
+
+    #nav-toggle:checked ~ .sidebar {
+        left: 0;
+    }
+
+    .sidebar:hover {
+        width: 260px;
+    }
+
+    .label {
+        display: inline-block;
+    }
+
+    .logo-text {
+        opacity: 1;
+    }
+
+    .logo-short {
+        display: none;
+    }
+
+    .content {
+        margin-left: 0;
+    }
+
+    /* stop background scroll */
+    #nav-toggle:checked ~ .content {
+        height: 100vh;
+        overflow: hidden;
+    }
+}
+    </style>
+
+</head>
+<body><!-- Mobile Top Nav: Logo (Left) + Hamburger (Right) -->
+<header class="mobile-header">
+    <div class="mobile-logo">
+        <!-- <span class="logo-short">S</span> -->
+        <span class="logo-short">Shivam C Vishwakarma</span>
+    </div>
+    <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle Menu">
+         <i class="fa fa-bars"></i>
+    </button>
+</header>
+
+<!-- Overlay to close sidebar when tapping outside -->
+<div class="sidebar-overlay" id="sidebar-overlay"></div>
+
+<!-- Keep your existing <div class="sidebar">...</div> below this -->
+
+
+
+
+
+<input type="checkbox" id="nav-toggle" hidden>
+
+
+
+<!-- <input type="checkbox" id="nav-toggle" class="checkbox" /> -->
+    <div class="sidebar">
+        
+    <div class="navbar nav-container">
+        <div class="logo">
+            <span class="logo-short">S</span>
+            <span class="logo-text">Shivam C</span>
+            <span class="logo-text">Vishwakarma</span>
+        </div>
+        
+        <!-- <div class="hamburger-lines">
+            <span class="line line1"></span>
+            <span class="line line2"></span>
+            <span class="line line3"></span>
+        </div> -->
+    </div>
+        <nav>
+            <ul class="menu-items">
+                <li class="nav-list"><a href="home"><i class="fa fa-home"></i><span class="label">Home</span></a></li>
+                <li class="nav-list"><a href="about"><i class="fa fa-user"></i><span class="label">About</span></a></li>
+                <li class="nav-list"><a href="projects"><i class="fa fa-cogs"></i><span class="label">Project</span></a></li>
+                <li class="nav-list"><a href="contact"><i class="fa fa-envelope"></i><span class="label">Contact</span></a></li>
+                <li class="nav-list"><a href="/"><i class="fa fa-envelope"></i><span class="label">Index</span></a></li>   
+                
+                <li class="submenu">
+                    <ul class="submenu-items">
+                        <div id="theme-option">
+                            <li><button class="theme-btn" id="default" onclick="changeTheme('theme-default')"></button></li>
+                            <li><button class="theme-btn" id="blue" onclick="changeTheme('theme-blue')"></button></li>
+                            <li><button class="theme-btn" id="purple" onclick="changeTheme('theme-purple')"></button></li>
+                            <li><button class="theme-btn" id="orange" onclick="changeTheme('theme-orange')"></button></li>
+                            <li><button class="theme-btn" id="dark" onclick="changeTheme('theme-dark')"></button></li>
+                        </div>
+                    </ul>    
+                </li>
+            </ul>
+        </nav>
+    </div>
+    
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+    const sidebar = document.querySelector('.sidebar');
+    const mobileToggle = document.getElementById('mobile-toggle');
+    const overlay = document.getElementById('sidebar-overlay');
+
+    function toggleSidebar() {
+        sidebar.classList.toggle('active');
+        overlay.classList.toggle('active');
+        mobileToggle.classList.toggle('active'); // Triggers X animation
+    }
+
+    mobileToggle.addEventListener('click', toggleSidebar);
+    overlay.addEventListener('click', toggleSidebar);
+
+    // Close sidebar when clicking a nav link on mobile
+    document.querySelectorAll('.sidebar a').forEach(link => {
+        link.addEventListener('click', () => {
+            if (window.innerWidth <= 768) {
+                sidebar.classList.remove('active');
+                overlay.classList.remove('active');
+                mobileToggle.classList.remove('active');
+            }
+        });
+    });
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,175 @@
+:root {
+  --primary: #a4193d;
+  --secondary: #630c23;
+  --accent: #12965f;
+  --text-light: #ffdfb9;
+  --text-muted: #888e94;
+  --bg: #ffffff;
+  --border: #ccc;
+  --highlight: #ff0044;
+}
+
+/* Global */
+body {
+  margin: 40px;
+  font-family: "Raleway", Arial, sans-serif;
+  background-color: var(--bg);
+  color: var(--text-light);
+}
+
+/* Section */
+.about-section {
+  background-color: var(--primary);
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+  max-width: 900px;
+  margin: auto;
+  transition: transform 0.3s ease;
+}
+
+.about-section:hover {
+  transform: translateY(-4px);
+}
+
+.about-section h2 {
+  color: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.about-section p {
+  line-height: 1.7;
+}
+
+/* Shared Card Style */
+.card {
+  background-color: var(--secondary);
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin: 30px 0;
+}
+
+.card h4 {
+  margin-bottom: 10px;
+  color: var(--text-muted);
+}
+
+/* Lists */
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin: 6px 0;
+}
+
+/* Tables */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+th, td {
+  border: 1px solid var(--border);
+  padding: 12px;
+  text-align: center;
+}
+
+th {
+  background-color: #521021;
+  color: #fff;
+}
+
+/* Model Container */
+.model-container {
+  margin: 20px 0;
+  padding: 1rem;
+  border-radius: 8px;
+  background-color: #cc1c4b;
+  transition: all 0.3s ease;
+}
+
+.model-container:hover {
+  transform: scale(1.02);
+}
+
+.selected_model {
+  border: 3px solid #800d2c;
+  background-color: var(--highlight);
+  color: #fff;
+}
+
+/* Typography */
+.model-title {
+  font-size: 1.4em;
+  font-weight: bold;
+  color: #222;
+}
+
+.metric {
+  margin-left: 20px;
+  font-size: 1.1em;
+}
+
+.metric span {
+  font-weight: bold;
+}
+
+/* Theme Options */
+#theme-option {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  width: 100%;
+}
+
+.theme-btn {
+  height: 28px;
+  width: 28px;
+  border-radius: 50%;
+  border: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.theme-btn:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+  box-shadow: 0 0 8px rgba(0,0,0,0.5);
+}
+
+/* Theme Colors */
+#default { background-color: #00584ed3; }
+#blue { background-color: #0d47a1; }
+#purple { background-color: #4a148c; }
+#orange { background-color: #e9631b; }
+#dark { background-color: #000; }
+
+/* Fixed Button Bar */
+.button-container {
+  display: flex;
+  gap: 1rem;
+  position: fixed;
+  top: 0;
+  padding: 0.5rem 1rem;
+  background-color: #fff;
+  border-bottom-left-radius: 12px;
+  border-bottom-right-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+/* Background Box */
+#box {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  color: #000;
+  background-color: #000;
+  font-size: 2rem;
+  font-weight: bold;
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Heart Attack Predictor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/navbar.css">
+    <link rel="stylesheet" href="static/footer.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <!-- Sidebar -->
+{% include "navbar.html" %}
+
+    <!-- Content -->
+<div class="content">
+
+<!-- 
+    'Dissolved_Oxygen':9,
+                         'Salinity':0.5,
+                         'pH':7, 
+                         'Secchi_Depth':0.20,
+                         'Water_Depth':0.35,
+                         'Water_Temp':25.0,
+                         'Air_Temp':30.0 -->
+    <form action="/predict_diamond" method="post" class="form-container">
+        <h2>Water Quality Prediction</h2>
+
+        <div class="form-group">
+            <input type="text" placeholder="Dissolved Oxygen" name="Dissolved_Oxygen" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" placeholder="Salinity" name="Salinity" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" placeholder="pH" name="pH" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" placeholder="Secchi Depth" name="Secchi_Depth" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" placeholder="Water Depth" name="Water_Depth" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" placeholder="Water Temp" name="Water_Temp" required>
+        </div>
+
+        <div class="form-group">
+            <input type="text" placeholder="Air Temp" name="Air_Temp" required>
+        </div>
+
+        <button type="submit">Predict</button>
+        <a class="about_project" href="about_water"><button class="project_about" type="button"> <i class="fa-solid fa-circle-info"></i> About Project</button></a>
+    </form>
+
+        
+
+{% include "footer.html" %}
+
+</body>
+</html>

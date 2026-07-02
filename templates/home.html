@@ -1,0 +1,148 @@
+  
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sivam C Vishwakarma</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="static/style.css">
+    <link rel="stylesheet" href="static/navbar.css">
+    <link rel="stylesheet" href="static/footer.css">
+    <link rel="stylesheet" href="static/home.css">
+    <!-- Font Awesome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+{% include "navbar.html" %}
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <div class="logo">
+            <span class="logo-short">S</span>
+            <span class="logo-text">Sivam C</span>
+            <span class="logo-text">Vishwakarma</span>
+        </div>
+
+        <nav>
+            <ul>
+                <li class="nav-list"><a href="home"><i class="fa fa-home"></i><span class="label">Home</span></a></li>
+                <li class="nav-list"><a href="about"><i class="fa fa-user"></i><span class="label">About</span></a></li>
+                <li class="nav-list"><a href="projects"><i class="fa fa-cogs"></i><span class="label">Project</span></a></li>
+                <li class="nav-list"><a href="contact"><i class="fa fa-envelope"></i><span class="label">Contact</span></a></li>
+                <li class="nav-list"><a href="/"><i class="fa fa-envelope"></i><span class="label">Index</span></a></li>   
+                
+                <li class="submenu">
+                    <ul class="submenu-items">
+                        <div id="theme-option">
+                        <li><button class="theme-btn" id="default" onclick="changeTheme('theme-default')"></button></li>
+                        <li><button class="theme-btn" id="blue" onclick="changeTheme('theme-blue')"></button></li>
+                        <li><button class="theme-btn" id="purple" onclick="changeTheme('theme-purple')"></button></li>
+                        <li><button class="theme-btn" id="orange" onclick="changeTheme('theme-orange')"></button></li>
+                        <li><button class="theme-btn" id="dark" onclick="changeTheme('theme-dark')"></button></li>
+                        </div>
+                    </ul>    
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <header>
+    <div class="container">
+      <h1>Shivam C Vishwakarma</h1>
+      <p>I try to build best solutions that are creative, effective, and impactful.</p>
+    </div>
+  </header>
+
+  <!-- About Section -->
+  <section id="about">
+    <div class="container">
+      <h2>About Me</h2>
+      <p>I am a <strong>Engineering Student</strong>, specialty  <strong>Artifical Inteligence & Machine Learning</strong> from Mumbai University.</p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills">
+    <div class="container">
+      <h2>My Skills</h2>
+      <div class="card-grid">
+        <div class="card">
+          <h3>Python</h3>
+        </div>
+        <div class="card">
+          <h3>Machine Learning</h3>
+        </div>
+        <div class="card">
+          <h3>Data Visualization</h3>
+        </div>
+        <div class="card">
+          <h3>Data Analysis</h3>
+        </div>
+        <div class="card">
+          <h3>NLP</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+   <section id="projects">
+    <div class="container">
+      <h2>My Projects</h2>
+      <div class="card-grid">
+
+        <a href="diabetes">
+          <div class="card">
+           <!-- <img src="https://via.placeholder.com/300x180" alt="Project 1"> -->
+            <h3>Diabetes</h3>
+          </div>
+        </a>
+        <a href="water">
+          <div class="card">
+            <!-- <img src="https://via.placeholder.com/300x180" alt="Project 2"> -->
+            <h3>Water Quality</h3>
+          </div>
+        </a>
+        <a href="diamond">
+          <div class="card">
+            <!-- <img src="https://via.placeholder.com/300x180" alt="Project 3"> -->
+            <h3>Diamond</h3>
+          </div>
+        </a>
+         <a href="projects">
+          <div class="card">
+            <!-- <img src="https://via.placeholder.com/300x180" alt="Project 3"> -->
+            <h3>More...</h3>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Contact Section -->
+  <section id="contact">
+    <div class="container">
+      <h2>Let's Connect</h2>
+      <p>Interested in working together or just want to connect? I'd love to hear from you.</p>
+      <a href="mailto:you@example.com?subject=I%20recently%20explored%20your%20project%20and%20would%20like%20to%20connect%20regarding%20job%20opportunities">
+      Get in Touch
+      </a>
+    </div>
+  </section>
+
+   <!-- Footer -->
+  {% include "footer.html" %}
+
+</body>
+<!-- <script>
+    function changeTheme(themeName) {
+        document.body.className = themeName;
+    }
+</script> -->
+
+<script src="/static/function.js"></script>
+
+</html>

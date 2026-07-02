@@ -1,0 +1,839 @@
+/* ================================================================
+   PROFESSIONAL THEME SYSTEM
+   5 Themes: Default (Sage) · Blue (Navy) · Purple (Amethyst)
+             Orange (Amber) · Dark (Obsidian)
+   ================================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ----------------------------------------------------------------
+   CSS RESET & BASE
+---------------------------------------------------------------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: block;
+    justify-content: center;
+    align-items: flex-start;
+    transition: background-color 0.35s ease;
+}
+
+/* ----------------------------------------------------------------
+   SHARED STRUCTURAL STYLES
+---------------------------------------------------------------- */
+
+.content {
+    padding: 48px 32px;
+    width: 100%;
+}
+
+/* ── Form Container ─────────────────────────────────────── */
+.form-container {
+    background: #ffffff;
+    padding: 44px 40px;
+    border-radius: 20px;
+    max-width: 520px;
+    width: 100%;
+    margin: 0 auto;
+    position: relative;
+    /* layered shadow for depth */
+    box-shadow:
+        0 1px 2px rgba(0,0,0,0.04),
+        0 4px 12px rgba(0,0,0,0.06),
+        0 16px 40px rgba(0,0,0,0.08);
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: 20px;
+    padding: 1px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.8), rgba(255,255,255,0.1));
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    pointer-events: none;
+}
+
+.form-container h2 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 1.55rem;
+    font-weight: 800;
+    margin-bottom: 28px;
+    text-align: center;
+    letter-spacing: -0.4px;
+}
+
+/* ── Form Groups ────────────────────────────────────────── */
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    margin-bottom: 7px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-weight: 600;
+    font-size: 0.78rem;
+    text-transform: uppercase;
+    letter-spacing: 0.7px;
+    color: #6b7280;
+}
+
+.form-group input,
+.form-group select,
+form input,
+form select {
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 400;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+    appearance: none;
+    -webkit-appearance: none;
+    width: 100%;
+}
+
+.form-group input::placeholder {
+    font-size: 14px;
+    font-weight: 400;
+    opacity: 0.55;
+}
+
+/* Remove number spinners */
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type="number"] { -moz-appearance: textfield; }
+
+/* ── Styled Select ──────────────────────────────────────── */
+.styled-select {
+    width: 100%;
+    padding: 12px 40px 12px 16px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 15px;
+    border-radius: 10px;
+    background-color: #fff;
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+    /* custom arrow */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%236b7280' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* ── Button ─────────────────────────────────────────────── */
+button {
+    border: none;
+    padding: 14px 20px;
+    width: 100%;
+    border-radius: 10px;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+    cursor: pointer;
+    transition: all 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+button::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0);
+    transition: background 0.2s ease;
+    border-radius: inherit;
+}
+
+button:hover::after {
+    background: rgba(255,255,255,0.1);
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ── Prediction Result Panel ────────────────────────────── */
+.prediction {
+    background: #ffffff;
+    margin: 24px auto 0;
+    padding: 24px 28px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 520px;
+    width: 100%;
+    box-shadow:
+        0 1px 2px rgba(0,0,0,0.04),
+        0 4px 12px rgba(0,0,0,0.06),
+        0 16px 40px rgba(0,0,0,0.08);
+}
+
+.project_about { margin-top: 24px; }
+
+/* ── Status Colors ──────────────────────────────────────── */
+.text-success {
+    color: #059669;
+    font-weight: 600;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+.text-danger {
+    color: #dc2626;
+    font-weight: 600;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+/* ── Theme Swatch Buttons ───────────────────────────────── */
+#default, #blue, #purple, #orange, #dark {
+    border: 2.5px solid rgba(255,255,255,0.45);
+    height: 28px;
+    width: 28px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
+
+#default:hover, #blue:hover, #purple:hover,
+#orange:hover, #dark:hover {
+    transform: scale(1.2);
+    border-color: rgba(255,255,255,0.9);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.3);
+}
+
+/* ── Sidebar shared nav hover ───────────────────────────── */
+nav ul .nav-list {
+    transition: background-color 0.2s ease, padding-left 0.2s ease;
+    border-radius: 10px;
+}
+
+
+/* ================================================================
+   THEME 1 — DEFAULT  "Sage & Forest"
+   A refined emerald palette, clean SaaS aesthetic
+================================================================ */
+
+.theme-default {
+    --clr-primary:      #16a34a;
+    --clr-primary-dark: #15803d;
+    --clr-primary-deep: #14532d;
+    --clr-accent:       #4ade80;
+    --clr-bg:           #f0fdf4;
+    --clr-surface:      #ffffff;
+    --clr-border:       #bbf7d0;
+    --clr-text:         #14532d;
+    --clr-footer-bg:    #052e16;
+    --clr-footer-text:  #bbf7d0;
+
+    background-color: var(--clr-bg);
+    background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(74, 222, 128, 0.12) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(22, 163, 74, 0.1) 0%, transparent 60%);
+}
+
+.theme-default .sidebar {
+    background: linear-gradient(175deg, #22c55e 0%, #16a34a 40%, #14532d 100%);
+    box-shadow: 4px 0 24px rgba(20, 83, 45, 0.25);
+}
+
+.theme-default nav ul .nav-list:hover {
+    background-color: rgba(255,255,255,0.15);
+    padding-left: 10px;
+}
+
+.theme-default .sidebar:hover #theme-option {
+    background-color: #4ade80;
+}
+
+.theme-default .main-footer {
+    background-color: var(--clr-footer-bg);
+    color: var(--clr-footer-text);
+}
+
+.theme-default .form-container h2 {
+    color: var(--clr-text);
+    background: linear-gradient(135deg, #15803d, #16a34a);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.theme-default .form-group label {
+    color: #166534;
+}
+
+.theme-default .form-group input,
+.theme-default .form-group select,
+.theme-default form input,
+.theme-default form select {
+    border: 1.5px solid var(--clr-border);
+    background-color: #f0fdf4;
+    color: #1a1a1a;
+}
+
+.theme-default .form-group input:focus,
+.theme-default form input:focus {
+    border-color: var(--clr-primary);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.12);
+}
+
+.theme-default .styled-select {
+    border: 1.5px solid var(--clr-border);
+    background-color: #f0fdf4;
+    color: #1a1a1a;
+}
+
+.theme-default .styled-select:focus {
+    border-color: var(--clr-primary);
+    box-shadow: 0 0 0 4px rgba(22, 163, 74, 0.12);
+    background-color: #fff;
+}
+
+.theme-default button {
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(22, 163, 74, 0.38), 0 1px 3px rgba(22, 163, 74, 0.3);
+}
+
+.theme-default button:hover {
+    background: linear-gradient(135deg, #16a34a, #15803d);
+    box-shadow: 0 6px 22px rgba(22, 163, 74, 0.5), 0 2px 6px rgba(22, 163, 74, 0.3);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.theme-default .prediction {
+    border-top: 3px solid #22c55e;
+}
+
+.theme-default .container .card .about_project {
+    text-decoration: none;
+    color: #374151;
+}
+
+.theme-default .container .card .card-title,
+.theme-default .container .card .about_project i {
+    color: var(--clr-primary);
+}
+
+.theme-default .container .card:hover .card-title,
+.theme-default .container .card:hover .about_project i {
+    color: var(--clr-primary-dark);
+    font-weight: 700;
+}
+
+/* Swatches */
+.theme-default #default { background-color: #16a34a; }
+.theme-default #blue    { background-color: #2563eb; }
+.theme-default #purple  { background-color: #7c3aed; }
+.theme-default #orange  { background-color: #ea580c; }
+.theme-default #dark    { background-color: #0f172a; }
+
+
+/* ================================================================
+   THEME 2 — BLUE  "Navy & Sapphire"
+   Premium fintech blue — authority meets clarity
+================================================================ */
+
+.theme-blue {
+    --clr-primary:      #2563eb;
+    --clr-primary-dark: #1d4ed8;
+    --clr-primary-deep: #1e3a8a;
+    --clr-accent:       #60a5fa;
+    --clr-bg:           #eff6ff;
+    --clr-surface:      #ffffff;
+    --clr-border:       #bfdbfe;
+    --clr-footer-bg:    #0c1836;
+    --clr-footer-text:  #bfdbfe;
+
+    background-color: var(--clr-bg);
+    background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(96, 165, 250, 0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(37, 99, 235, 0.1) 0%, transparent 60%);
+}
+
+.theme-blue .sidebar {
+    background: linear-gradient(175deg, #3b82f6 0%, #2563eb 40%, #1e3a8a 100%);
+    box-shadow: 4px 0 24px rgba(30, 58, 138, 0.28);
+}
+
+.theme-blue nav ul .nav-list:hover {
+    background-color: rgba(255,255,255,0.15);
+    padding-left: 10px;
+}
+
+.theme-blue .sidebar:hover #theme-option {
+    background-color: #60a5fa;
+}
+
+.theme-blue .main-footer {
+    background-color: var(--clr-footer-bg);
+    color: var(--clr-footer-text);
+}
+
+.theme-blue .form-container h2 {
+    background: linear-gradient(135deg, #1d4ed8, #2563eb);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.theme-blue .form-group label {
+    color: #1e40af;
+}
+
+.theme-blue .form-group input,
+.theme-blue .form-group select,
+.theme-blue form input,
+.theme-blue form select {
+    border: 1.5px solid var(--clr-border);
+    background-color: #eff6ff;
+    color: #1a1a1a;
+}
+
+.theme-blue .form-group input:focus,
+.theme-blue form input:focus {
+    border-color: var(--clr-primary);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+}
+
+.theme-blue .styled-select {
+    border: 1.5px solid var(--clr-border);
+    background-color: #eff6ff;
+    color: #1a1a1a;
+}
+
+.theme-blue .styled-select:focus {
+    border-color: var(--clr-primary);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
+    background-color: #fff;
+}
+
+.theme-blue button {
+    background: linear-gradient(135deg, #3b82f6, #2563eb);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(37, 99, 235, 0.38), 0 1px 3px rgba(37, 99, 235, 0.3);
+}
+
+.theme-blue button:hover {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    box-shadow: 0 6px 22px rgba(37, 99, 235, 0.5), 0 2px 6px rgba(37, 99, 235, 0.3);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.theme-blue .prediction {
+    border-top: 3px solid #3b82f6;
+}
+
+.theme-blue .container .card .card-title,
+.theme-blue .container .card .about_project i {
+    color: var(--clr-primary);
+}
+
+.theme-blue .container .card:hover .card-title,
+.theme-blue .container .card:hover .about_project i {
+    color: var(--clr-primary-dark);
+    font-weight: 700;
+}
+
+/* Swatches */
+.theme-blue #default { background-color: #16a34a; }
+.theme-blue #blue    { background-color: #2563eb; }
+.theme-blue #purple  { background-color: #7c3aed; }
+.theme-blue #orange  { background-color: #ea580c; }
+.theme-blue #dark    { background-color: #0f172a; }
+
+
+/* ================================================================
+   THEME 3 — PURPLE  "Amethyst & Violet"
+   Rich, creative purple — editorial, confident, modern
+================================================================ */
+
+.theme-purple {
+    --clr-primary:      #7c3aed;
+    --clr-primary-dark: #6d28d9;
+    --clr-primary-deep: #4c1d95;
+    --clr-accent:       #c084fc;
+    --clr-bg:           #f5f3ff;
+    --clr-border:       #ddd6fe;
+    --clr-footer-bg:    #180a35;
+    --clr-footer-text:  #ddd6fe;
+
+    background-color: var(--clr-bg);
+    background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(192, 132, 252, 0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(124, 58, 237, 0.1) 0%, transparent 60%);
+}
+
+.theme-purple .sidebar {
+    background: linear-gradient(175deg, #a855f7 0%, #7c3aed 40%, #4c1d95 100%);
+    box-shadow: 4px 0 24px rgba(76, 29, 149, 0.3);
+}
+
+.theme-purple nav ul .nav-list:hover {
+    background-color: rgba(255,255,255,0.15);
+    padding-left: 10px;
+}
+
+.theme-purple .sidebar:hover #theme-option {
+    background-color: #c084fc;
+}
+
+.theme-purple .main-footer {
+    background-color: var(--clr-footer-bg);
+    color: var(--clr-footer-text);
+}
+
+.theme-purple .form-container h2 {
+    background: linear-gradient(135deg, #6d28d9, #7c3aed);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.theme-purple .form-group label {
+    color: #5b21b6;
+}
+
+.theme-purple .form-group input,
+.theme-purple .form-group select,
+.theme-purple form input,
+.theme-purple form select {
+    border: 1.5px solid var(--clr-border);
+    background-color: #f5f3ff;
+    color: #1a1a1a;
+}
+
+.theme-purple .form-group input:focus,
+.theme-purple form input:focus {
+    border-color: var(--clr-primary);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+}
+
+.theme-purple .styled-select {
+    border: 1.5px solid var(--clr-border);
+    background-color: #f5f3ff;
+    color: #1a1a1a;
+}
+
+.theme-purple .styled-select:focus {
+    border-color: var(--clr-primary);
+    box-shadow: 0 0 0 4px rgba(124, 58, 237, 0.12);
+    background-color: #fff;
+}
+
+.theme-purple button {
+    background: linear-gradient(135deg, #a855f7, #7c3aed);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.38), 0 1px 3px rgba(124, 58, 237, 0.3);
+}
+
+.theme-purple button:hover {
+    background: linear-gradient(135deg, #7c3aed, #6d28d9);
+    box-shadow: 0 6px 22px rgba(124, 58, 237, 0.5), 0 2px 6px rgba(124, 58, 237, 0.3);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.theme-purple .prediction {
+    border-top: 3px solid #a855f7;
+}
+
+.theme-purple .container .card .card-title,
+.theme-purple .container .card .about_project i {
+    color: var(--clr-primary);
+}
+
+.theme-purple .container .card:hover .card-title,
+.theme-purple .container .card:hover .about_project i {
+    color: var(--clr-primary-dark);
+    font-weight: 700;
+}
+
+/* Swatches */
+.theme-purple #default { background-color: #16a34a; }
+.theme-purple #blue    { background-color: #2563eb; }
+.theme-purple #purple  { background-color: #7c3aed; }
+.theme-purple #orange  { background-color: #ea580c; }
+.theme-purple #dark    { background-color: #0f172a; }
+
+
+/* ================================================================
+   THEME 4 — ORANGE  "Amber & Terracotta"
+   Warm confidence — bold, energetic, premium
+================================================================ */
+
+.theme-orange {
+    --clr-primary:      #ea580c;
+    --clr-primary-dark: #c2410c;
+    --clr-primary-deep: #7c2d12;
+    --clr-accent:       #fb923c;
+    --clr-bg:           #fff7ed;
+    --clr-border:       #fed7aa;
+    --clr-footer-bg:    #271106;
+    --clr-footer-text:  #fed7aa;
+
+    background-color: var(--clr-bg);
+    background-image:
+        radial-gradient(ellipse 80% 50% at 20% -10%, rgba(251, 146, 60, 0.14) 0%, transparent 60%),
+        radial-gradient(ellipse 60% 40% at 80% 110%, rgba(234, 88, 12, 0.1) 0%, transparent 60%);
+}
+
+.theme-orange .sidebar {
+    background: linear-gradient(175deg, #f97316 0%, #ea580c 40%, #7c2d12 100%);
+    box-shadow: 4px 0 24px rgba(124, 45, 18, 0.3);
+}
+
+.theme-orange nav ul .nav-list:hover {
+    background-color: rgba(255,255,255,0.15);
+    padding-left: 10px;
+}
+
+.theme-orange .sidebar:hover #theme-option {
+    background-color: #fdba74;
+}
+
+.theme-orange .main-footer {
+    background-color: var(--clr-footer-bg);
+    color: var(--clr-footer-text);
+}
+
+.theme-orange .form-container h2 {
+    background: linear-gradient(135deg, #c2410c, #ea580c);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.theme-orange .form-group label {
+    color: #9a3412;
+}
+
+.theme-orange .form-group input,
+.theme-orange .form-group select,
+.theme-orange form input,
+.theme-orange form select {
+    border: 1.5px solid var(--clr-border);
+    background-color: #fff7ed;
+    color: #1a1a1a;
+}
+
+.theme-orange .form-group input:focus,
+.theme-orange form input:focus {
+    border-color: var(--clr-primary);
+    background-color: #fff;
+    box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.12);
+}
+
+.theme-orange .styled-select {
+    border: 1.5px solid var(--clr-border);
+    background-color: #fff7ed;
+    color: #1a1a1a;
+}
+
+.theme-orange .styled-select:focus {
+    border-color: var(--clr-primary);
+    box-shadow: 0 0 0 4px rgba(234, 88, 12, 0.12);
+    background-color: #fff;
+}
+
+.theme-orange button {
+    background: linear-gradient(135deg, #f97316, #ea580c);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(234, 88, 12, 0.38), 0 1px 3px rgba(234, 88, 12, 0.3);
+}
+
+.theme-orange button:hover {
+    background: linear-gradient(135deg, #ea580c, #c2410c);
+    box-shadow: 0 6px 22px rgba(234, 88, 12, 0.5), 0 2px 6px rgba(234, 88, 12, 0.3);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.theme-orange .prediction {
+    border-top: 3px solid #f97316;
+}
+
+.theme-orange .container .card .card-title,
+.theme-orange .container .card .about_project i {
+    color: var(--clr-primary);
+}
+
+.theme-orange .container .card:hover .card-title,
+.theme-orange .container .card:hover .about_project i {
+    color: var(--clr-primary-dark);
+    font-weight: 700;
+}
+
+/* Swatches */
+.theme-orange #default { background-color: #16a34a; }
+.theme-orange #blue    { background-color: #2563eb; }
+.theme-orange #purple  { background-color: #7c3aed; }
+.theme-orange #orange  { background-color: #ea580c; }
+.theme-orange #dark    { background-color: #0f172a; }
+
+
+/* ================================================================
+   THEME 5 — DARK  "Obsidian"
+   True premium dark mode — deep slate, silver, electric blue accent
+================================================================ */
+
+.theme-dark {
+    --clr-primary:      #38bdf8;
+    --clr-surface:      #1e293b;
+    --clr-surface-2:    #0f172a;
+    --clr-border:       #334155;
+    --clr-text:         #f1f5f9;
+    --clr-text-muted:   #94a3b8;
+    --clr-footer-bg:    #020617;
+    --clr-footer-text:  #64748b;
+
+    background-color: #0f172a;
+    background-image:
+        radial-gradient(ellipse 80% 50% at 10% -5%, rgba(56, 189, 248, 0.07) 0%, transparent 55%),
+        radial-gradient(ellipse 60% 40% at 90% 105%, rgba(56, 189, 248, 0.05) 0%, transparent 55%);
+}
+
+.theme-dark .sidebar {
+    background: linear-gradient(175deg, #1e293b 0%, #0f172a 60%, #020617 100%);
+    border-right: 1px solid var(--clr-border);
+    box-shadow: 4px 0 24px rgba(0, 0, 0, 0.5);
+}
+
+.theme-dark nav ul .nav-list:hover {
+    background-color: rgba(255,255,255,0.07);
+    padding-left: 10px;
+}
+
+.theme-dark .sidebar:hover #theme-option {
+    background-color: #475569;
+}
+
+.theme-dark .main-footer {
+    background-color: var(--clr-footer-bg);
+    color: var(--clr-footer-text);
+    border-top: 1px solid var(--clr-border);
+}
+
+/* Override white card backgrounds for dark mode */
+.theme-dark .form-container {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    box-shadow:
+        0 1px 2px rgba(0,0,0,0.3),
+        0 8px 24px rgba(0,0,0,0.4),
+        0 24px 56px rgba(0,0,0,0.5);
+}
+
+.theme-dark .form-container h2 {
+    background: linear-gradient(135deg, #7dd3fc, #38bdf8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.theme-dark .form-group label {
+    color: var(--clr-text-muted);
+}
+
+.theme-dark .form-group input,
+.theme-dark .form-group select,
+.theme-dark form input,
+.theme-dark form select {
+    border: 1.5px solid var(--clr-border);
+    background-color: var(--clr-surface-2);
+    color: var(--clr-text);
+}
+
+.theme-dark .form-group input::placeholder {
+    color: #475569;
+}
+
+.theme-dark .form-group input:focus,
+.theme-dark form input:focus {
+    border-color: var(--clr-primary);
+    background-color: #0f172a;
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+}
+
+.theme-dark .styled-select {
+    border: 1.5px solid var(--clr-border);
+    background-color: var(--clr-surface-2);
+    color: var(--clr-text);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%2394a3b8' d='M6 8L1 3h10z'/%3E%3C/svg%3E");
+}
+
+.theme-dark .styled-select:focus {
+    border-color: var(--clr-primary);
+    box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.15);
+}
+
+.theme-dark button {
+    background: linear-gradient(135deg, #0ea5e9, #0284c7);
+    color: #fff;
+    box-shadow: 0 4px 16px rgba(14, 165, 233, 0.3), 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.theme-dark button:hover {
+    background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+    box-shadow: 0 6px 22px rgba(14, 165, 233, 0.45), 0 2px 8px rgba(0, 0, 0, 0.4);
+    transform: translateY(-2px);
+    color: #fff;
+}
+
+.theme-dark .prediction {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+    border-top: 3px solid #38bdf8;
+    color: var(--clr-text);
+    box-shadow: 0 8px 32px rgba(0,0,0,0.5);
+}
+
+.theme-dark .container .card {
+    background: var(--clr-surface);
+    border: 1px solid var(--clr-border);
+}
+
+.theme-dark .container .card .about_project {
+    color: var(--clr-text-muted);
+    text-decoration: none;
+}
+
+.theme-dark .container .card .card-title,
+.theme-dark .container .card .about_project i {
+    color: #7dd3fc;
+}
+
+.theme-dark .container .card:hover .card-title,
+.theme-dark .container .card:hover .about_project i {
+    color: #38bdf8;
+    font-weight: 700;
+}
+
+/* Swatches */
+.theme-dark #default { background-color: #16a34a; }
+.theme-dark #blue    { background-color: #2563eb; }
+.theme-dark #purple  { background-color: #7c3aed; }
+.theme-dark #orange  { background-color: #ea580c; }
+.theme-dark #dark    { background-color: #334155; border-color: #64748b; }

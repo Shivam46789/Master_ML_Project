@@ -1,0 +1,660 @@
+/* 
+    body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    /* background-color: #f5f7fa; */
+    /* margin: 0; */
+    /* padding: 0; */
+    /* display: flex; */
+    /* justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh; } */
+
+.content {
+    padding: 40px;
+}
+
+.form-container {
+    background: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+}
+
+.form-container h2 {
+    margin-bottom: 25px;
+    color: #00584e;
+    text-align: center;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #333;
+}
+
+.form-group input,
+.form-group select {
+    padding: 10px 12px;
+    border: 1px solid #ffffff;
+    border-radius: 6px;
+    font-size: 15px;
+}
+
+.form-group input::placeholder {
+    color: #727272;
+    font-size: 17px;
+    font-weight: bold;
+    /* font-style: italic; */
+    opacity: 1;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* .form-group input:hover{
+    
+} */
+
+.styled-select {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    border: 2px solid #00584e;
+    border-radius: 6px;
+    background-color: #fff;
+    color: #333;
+    box-sizing: border-box;
+    outline: none;
+    cursor: pointer;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.styled-select:focus {
+    border-color: #003f3a;
+    box-shadow: 0 0 5px rgba(0, 88, 78, 0.3);
+}
+
+
+button {
+    background-color: #00584e;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #00443e;
+}
+
+.project_about{
+  margin-top: 20px;
+}
+
+.prediction {
+    margin-top: 20px;
+    text-align: center;
+    background: #fff;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.text-success {
+    color: green;
+}
+
+.text-danger {
+    color: red;
+}
+
+
+
+
+
+
+
+/* Default Theme 000000000000000000000000000000000000000000000000000000000000000000000000000000000*/
+.theme-default {
+    background-color: #49b87b;
+}
+
+.theme-default .sidebar {
+    background-image: linear-gradient(45deg, #5ecabe, #2bae66, #0a443d);
+}
+.theme-default nav ul .nav-list:hover {
+        background-color: #59ce8d;
+        border-radius: 10px;
+        padding-left: 10px;
+}
+.theme-default .sidebar:hover #theme-option{
+    background-color: #34dac6;
+}
+
+.theme-default .main-footer {
+    background-color:#001b18;
+    color: #fff;
+}
+
+.theme-default .form-container h2 {
+    color: #2bae66;
+}
+
+.theme-default form input,form select {
+    border: 2px solid #2bae66d3;
+}
+
+.theme-default form input::after,form select {
+    border-bottom: 2px solid #2bae66d3;
+    border: none;
+}
+
+.theme-default button:hover{
+    color: #2bae66d3;
+    border: 2px solid #2bae66d3;
+    background-color: white;
+    font-weight: bold;
+}
+
+.theme-default button{
+    color: white;
+    border: 2px solid #2bae66d3;
+    background-color: #2bae66d3;
+    font-weight: bold;      
+}
+.theme-default #default{
+    background-color: #2bae66d3;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+.theme-default #blue{
+    background-color: #0d47a1;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+.theme-default #purple{
+    background-color: #4a148c;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;    
+}
+
+.theme-default #orange{
+    background-color: #f95700;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+
+.theme-default #dark{
+    background-color: #000;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+
+.theme-default .container .card .about_project{
+    text-decoration:none;
+    color:#333;
+    /* font-size:16px; */
+}
+
+.theme-default .container .card .card-title,
+.theme-default .container .card .about_project i{
+    color: #18864ad3;
+}
+
+.theme-default .container .card:hover .card-title,
+.theme-default .container .card:hover .about_project i{
+    color: #0d4d29d3;
+    font-weight: bold;
+}
+
+
+
+/* Blue Theme 11111111111111111111111111111111111111111111111111111111111111111111111111111 */
+.theme-blue{
+    background-color: #56a5f5d3;
+}
+
+.theme-blue .sidebar {
+    background-image: linear-gradient(45deg, #2196f3, #1e4174, #0d47a1);
+}
+
+.theme-blue nav ul .nav-list:hover {
+        background-color: #56a5f5d3;
+        border-radius: 10px;
+        padding-left: 10px;
+}
+
+.theme-blue .sidebar:hover #theme-option{
+    background-color: #56a5f5d3;
+}
+.theme-purple .sidebar:hover #theme-option{
+    background-color: #ffffff;
+}
+.theme-orange .sidebar:hover #theme-option{
+    background-color: #ffffff;
+}
+.theme-dark .sidebar:hover #theme-option{
+    background-color: #ffffff;
+}
+
+.theme-blue .main-footer {
+    background-color: #000e24;
+    color: #fff;
+}
+
+
+.theme-blue .form-container h2 {
+    color: #1e4174;
+}
+
+.theme-blue form input,form select {
+    border: 2px solid #1e4174;
+}
+
+.theme-blue button:hover{
+    color: #1e4174;
+    border: 2px solid #1e4174;
+    background-color: white;
+    font-weight: bold;
+}
+
+.theme-blue button{
+    color: #fff;
+    border: 2px solid #1e4174;
+    background-color: #1e4174;
+    font-weight: bold;
+}
+
+.theme-blue #default{
+    background-color: #2bae66d3;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+
+.theme-blue #blue{
+    background-color: #0d47a1;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+
+.theme-blue #purple{
+    background-color: #4a148c;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;    
+}
+
+.theme-blue #orange{
+    background-color: #e9631b;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+
+.theme-blue #dark{
+    background-color: #000;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+
+.theme-blue .container .card .card-title,
+.theme-blue .container .card .about_project i{
+    color: #1e4174;
+}
+
+.theme-blue .container .card:hover .card-title,
+.theme-blue .container .card:hover .about_project i{
+    color: #0d47a1;
+    font-weight: bold;
+}
+/* 5555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555555 */
+
+
+/* .theme-blue .main-footer{
+    background-image: linear-gradient(45deg, #002646, #00264d, #001029);
+} */
+
+/* .theme-blue .main-footer {
+    background-color: #0d47a1;
+    color: #fff;
+} */
+
+
+/* .theme-blue .main-footer {
+    background-color: #000;
+    color: #fff;
+} */
+
+
+
+
+
+/* Purple Theme 22222222222222222222222222222222222222222222222222222222222222222222222222222222222*/
+.theme-purple {
+    background-color: #f84056;
+}
+
+.theme-purple .sidebar {
+    background-image: linear-gradient(45deg, #9c27b0, #990011, #4a148c);
+}
+
+.theme-purple nav ul .nav-list:hover {
+        background-color: #c73f6c;
+        border-radius: 10px;
+        padding-left: 10px;
+}
+
+.theme-default .sidebar:hover #theme-option{
+    background-color: #34dac6;
+}
+
+.theme-purple .form-container h2 {
+    color: #990011;
+}
+
+.theme-purple form input,form select {
+    border: 2px solid #990011;
+}
+
+.theme-purple button:hover{
+    color: #990011;
+    border: 2px solid #990011;
+    background-color: white;
+    font-weight: bold;
+}
+
+.theme-purple button{
+    color: white;
+    border: 2px solid #990011;
+    background-color: #990011;
+    font-weight: bold;      
+}
+
+.theme-purple #default{
+    background-color: #00584ed3;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+
+.theme-purple #blue{
+    background-color: #0d47a1;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+
+.theme-purple #purple{
+    background-color: #4a148c;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;    
+}
+
+.theme-purple #orange{
+    background-color: #e9631b;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+
+.theme-purple #dark{
+    background-color: #000;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+
+.theme-purple .main-footer {
+    background-color: #120029;
+    color: #fff;
+}
+.theme-purple .container .card .card-title,
+.theme-purple .container .card .about_project i{
+    color: #f84056;
+}
+
+.theme-purple .container .card:hover .card-title,
+.theme-purple .container .card:hover .about_project i{
+    color: #990011;
+    font-weight: bold;
+}
+
+
+
+/* Orange Theme 3333333333333333333333333333333333333333333333333333333333333333333333333333333333333333333*/
+
+.theme-orange {
+    background-color: #f76945;
+}
+
+.theme-orange .sidebar {
+    background-image: linear-gradient(45deg, #ff9800, #f93200, #ec6c27);
+}
+
+.theme-orange nav ul .nav-list:hover {
+        background-color: #f0492cea;
+        border-radius: 10px;
+        padding-left: 10px;
+}
+
+.theme-orange .form-container h2 {
+    color: #f95700;
+}
+
+.theme-orange form input,form select {
+    border: 2px solid #f95700;
+}
+
+.theme-orange button:hover{
+    color: #f95700;
+    border: 2px solid #f95700;
+    background-color: white;
+    font-weight: bold;
+}
+
+.theme-orange button{
+    color: white;
+    border: 2px solid #f95700;
+    background-color: #f95700;
+    font-weight: bold;      
+}
+
+.theme-orange #default{
+    background-color: #00584ed3;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+
+.theme-orange #blue{
+    background-color: #0d47a1;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+
+.theme-orange #purple{
+    background-color: #4a148c;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;    
+}
+
+.theme-orange #orange{
+    background-color: #e9631b;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+
+.theme-orange #dark{
+    background-color: #000;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+
+.theme-orange .main-footer {
+    background-color: #241106;
+    color: #fff;
+}
+
+.theme-orange .container .card .card-title,
+.theme-orange .container .card .about_project i{
+    color: #f76945;
+}
+
+.theme-orange .container .card:hover .card-title,
+.theme-orange .container .card:hover .about_project i{
+    color: #f93200;
+    font-weight: bold;
+}
+
+
+
+/* Dark Theme 44444444444444444444444444444444444444444444444444444444444444444444444444444444444444444444*/
+.theme-dark {
+    background-color: #707070;
+}
+
+.theme-dark .sidebar {
+    background-image: linear-gradient(45deg, #252525, #3f3f3f, #000);
+}
+
+.theme-dark nav ul .nav-list:hover {
+        background-color: #494949;
+        border-radius: 10px;
+        padding-left: 10px;
+}
+
+
+.theme-dark .form-container h2 {
+    color: #000;
+}
+
+.theme-dark form input,form select {
+    border: 2px solid #000;
+}
+
+.theme-dark button:hover{
+    color: #000;
+    border: 2px solid #000;
+    background-color: white;
+    font-weight: bold;
+}
+
+.theme-dark button{
+    color: white;
+    border: 2px solid #000;
+    background-color: #000;
+    font-weight: bold;      
+}
+
+.theme-dark #default{
+    background-color: #00584ed3;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+.theme-dark #blue{
+    background-color: #0d47a1;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+.theme-dark #purple{
+    background-color: #4a148c;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;    
+}
+
+.theme-dark #orange{
+    background-color: #e9631b;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+
+.theme-dark #dark{
+    background-color: #000;
+    border: none;
+    height: 26px;
+    width: 26px;
+    border-radius: 100%;
+}
+
+.theme-dark .main-footer {
+    background-color: #0a0a0a;
+    color: #fff;
+}
+
+.theme-dark .container .card .card-title,
+.theme-dark .container .card .about_project i{
+    color: #252525;
+}
+
+.theme-dark .container .card:hover .card-title,
+.theme-dark .container .card:hover .about_project i{
+    color: #000;
+    font-weight: bold;
+}
+

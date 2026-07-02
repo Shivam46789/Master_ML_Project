@@ -1,0 +1,153 @@
+/*  ───────────────────────────  CORE DESIGN TOKENS  ─────────────────────────── */
+/*  NEVER put hard-coded colours below this line – always reference a variable  */
+
+:root {
+    /* neutrals */
+    --c-bg        : hsl(210 20% 98%);   /* window background   */
+    --c-surface   : hsl(0   0% 100%);   /* cards, form shells  */
+    --c-surface-2 : hsl(210 16% 96%);   /* secondary surfaces  */
+    --c-border    : hsl(210 14% 90%);
+    --c-shadow    : 0 4px 14px hsl(210 8% 46% / .12);
+
+    /* text */
+    --c-text      : hsl(215 18% 15%);
+    --c-muted     : hsl(215 12% 40%);
+
+    /* brand */
+    --c-accent        : hsl(160 60% 40%);
+    --c-accent-hover  : hsl(160 75% 32%);
+    --c-accent-soft   : hsl(160 60% 94%);
+
+    /* feedback */
+    --c-success : hsl(155 70% 35%);
+    --c-error   : hsl(355 90% 50%);
+
+    /* motion */
+    --t-base : .25s cubic-bezier(.4,0,.2,1);
+}
+
+/*  ───────────────────────────  GENERIC ELEMENTS  ─────────────────────────── */
+
+html,body{
+    height:100%;
+    margin:0;
+    font-family: "Segoe UI", Roboto, system-ui, sans-serif;
+    background:var(--c-bg);
+    color:var(--c-text);
+}
+
+.content{padding:3rem 1rem}
+
+/* cards / forms */
+.form-container,
+.prediction{
+    background:var(--c-surface);
+    border:1px solid var(--c-border);
+    border-radius:.75rem;
+    box-shadow:var(--c-shadow);
+    padding:2.5rem 2rem;
+    max-width:32rem;
+    width:100%;
+    margin-inline:auto;
+}
+.form-container h2{color:var(--c-accent);margin:0 0 1.5rem;text-align:center}
+
+/* inputs */
+.form-group{display:flex;flex-direction:column;gap:.5rem;margin-bottom:1.25rem}
+
+.form-group label{font-weight:600;color:var(--c-text)}
+
+.form-group input,
+.form-group select{
+    font-size:1rem;line-height:1.4;
+    padding:.65rem .9rem;
+    border:1px solid var(--c-border);
+    border-radius:.5rem;
+    background:var(--c-surface-2);
+    transition:border-color var(--t-base), box-shadow var(--t-base);
+}
+.form-group input:focus,
+.form-group select:focus{
+    outline:none;
+    border-color:var(--c-accent);
+    box-shadow:0 0 0 3px var(--c-accent-soft);
+}
+.form-group input::placeholder{color:var(--c-muted);font-weight:500}
+
+/* remove number spinners */
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button{appearance:none;margin:0}
+input[type=number]{appearance:textfield}
+
+/* buttons */
+button{
+    display:inline-block;
+    width:100%;
+    padding:.75rem 1rem;
+    font-size:1rem;
+    font-weight:700;
+    color:#fff;
+    background:var(--c-accent);
+    border:none;
+    border-radius:.5rem;
+    cursor:pointer;
+    transition:background var(--t-base), transform var(--t-base);
+}
+button:hover{background:var(--c-accent-hover);transform:translateY(-2px)}
+button:active{transform:translateY(0)}
+
+.text-success{color:var(--c-success)}
+.text-danger {color:var(--c-error )}
+
+/* links inside cards */
+.about_project{text-decoration:none;color:var(--c-text)}
+.card:hover .about_project,
+.card:hover .card-title{color:var(--c-accent-hover)}
+
+/*  ───────────────────────────  THEME OVERRIDES  ─────────────────────────── */
+/*  Copy the template below to add more themes                                   */
+
+/*
+   Each block only redefines the DESIGN TOKENS.
+   Everything else automatically inherits new colours.
+*/
+
+/* ◉  Teal / Default  ────────────────────────────────────────────────────────── */
+/*  Accent 160° 60% 40%  */
+.theme-default{ /* nothing to change, .root values already teal */ }
+
+/* ◉  Indigo Theme  ─────────────────────────────────────────────────────────── */
+.theme-blue {
+    --c-accent       : hsl(220 70% 56%);
+    --c-accent-hover : hsl(220 70% 46%);
+    --c-accent-soft  : hsl(220 60% 93%);
+}
+
+/* ◉  Orchid Theme  ─────────────────────────────────────────────────────────── */
+.theme-purple{
+    --c-accent       : hsl(275 65% 55%);
+    --c-accent-hover : hsl(275 80% 45%);
+    --c-accent-soft  : hsl(275 60% 95%);
+}
+
+/* ◉  Sunset Theme  ─────────────────────────────────────────────────────────── */
+.theme-orange{
+    --c-accent       : hsl(22  90% 55%);
+    --c-accent-hover : hsl(22  95% 45%);
+    --c-accent-soft  : hsl(22  90% 95%);
+}
+
+/* ◉  Dark Theme  ───────────────────────────────────────────────────────────── */
+.theme-dark{
+    --c-bg        : hsl(215 25% 12%);
+    --c-surface   : hsl(215 20% 16%);
+    --c-surface-2 : hsl(215 22% 20%);
+    --c-border    : hsl(215 15% 28%);
+    --c-text      : hsl(210 20% 96%);
+    --c-muted     : hsl(210 16% 70%);
+    --c-shadow    : 0 4px 16px hsl(210 8% 9% / .6);
+
+    --c-accent       : hsl(200 100% 55%);
+    --c-accent-hover : hsl(200 100% 45%);
+    --c-accent-soft  : hsl(200 100% 20% / .35);
+}
